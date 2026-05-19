@@ -1,3 +1,5 @@
+import os
+print(f"Starting on port: {os.environ.get('PORT', 10000)}")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
