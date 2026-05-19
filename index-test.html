@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Agent</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Inter, sans-serif;
+            background:
+                radial-gradient(circle at top left,#312e81 0%,#0f172a 40%),
+                #020617;
+            color:white;
+            height:100vh;
+            overflow:hidden;
+        }
+
+        .app{
+            width:100%;
+            height:100vh;
+            display:flex;
+        }
+
+        /* ================= SIDEBAR ================= */
+
+        .sidebar{
+            width:320px;
+            background:rgba(15,23,42,0.92);
+            border-right:1px solid rgba(255,255,255,0.08);
+            backdrop-filter:blur(20px);
+            padding:30px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+        }
+
+        .sidebar-top{
+            display:flex;
+            flex-direction:column;
+            gap:30px;
+        }
+
+        .logo{
+            font-size:2rem;
+            font-weight:700;
+            letter-spacing:-1px;
+        }
+
+        .logo span{
+            color:#8b5cf6;
+        }
+
+        .description{
+            color:#94a3b8;
+            line-height:1.6;
+            font-size:0.95rem;
+        }
+
+        .upload-card{
+            background:rgba(255,255,255,0.04);
+            border:1px solid rgba(255,255,255,0.08);
+            padding:22px;
+            border-radius:20px;
+        }
+
+        .upload-card h3{
+            margin-bottom:10px;
+            font-size:1rem;
+            font-weight:600;
+        }
+
+        .upload-card p{
+            color:#94a3b8;
+            font-size:0.9rem;
+            margin-bottom:18px;
+            line-height:1.5;
+        }
+
+        input[type="file"]{
+            width:100%;
+            margin-bottom:15px;
+            color:#cbd5e1;
+            background:rgba(255,255,255,0.03);
+            padding:12px;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.06);
+        }
+
+        .sidebar-footer{
+            color:#64748b;
+            font-size:0.85rem;
+        }
+
+        #upload-status{
+            display:block;
+            margin-top:14px;
+            color:#8b5cf6;
+            font-size:0.92rem;
+            line-height:1.4;
+        }
+
+        /* ================= MAIN ================= */
+
+        .main{
+            flex:1;
+            display:flex;
+            flex-direction:column;
+            height:100vh;
+        }
+
+        /* ================= TOPBAR ================= */
+
+        .topbar{
+            padding:22px 30px;
+            border-bottom:1px solid rgba(255,255,255,0.08);
+            background:rgba(15,23,42,0.55);
+            backdrop-filter:blur(20px);
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+        }
+
+        .topbar h2{
+            font-size:1.2rem;
+            font-weight:600;
+        }
+
+        .topbar span{
+            color:#94a3b8;
+            font-size:0.92rem;
+        }
+
+        /* ================= CHAT ================= */
+
+        #chat-box{
+            flex:1;
+            overflow-y:auto;
+            padding:30px;
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+        }
+
+        .welcome{
+            text-align:center;
+            margin-top:100px;
+        }
+
+        .welcome h1{
+            font-size:3rem;
+            margin-bottom:15px;
+            letter-spacing:-2px;
+        }
+
+        .welcome p{
+            color:#94a3b8;
+            font-size:1.05rem;
+        }
+
+        .message{
+            max-width:75%;
+            padding:16px 18px;
+            border-radius:20px;
+            line-height:1.7;
+            font-size:0.96rem;
+            animation:fadeIn .25s ease;
+            word-wrap:break-word;
+        }
+
+        .user{
+            align-self:flex-end;
+            background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+            border-bottom-right-radius:5px;
+            box-shadow:0 10px 25px rgba(124,58,237,0.35);
+        }
+
+        .bot{
+            align-self:flex-start;
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.06);
+            border-bottom-left-radius:5px;
+            color:#e2e8f0;
+        }
+
+        .typing{
+            color:#a78bfa;
+            font-style:italic;
+        }
+
+        /* ================= INPUT AREA ================= */
+
+        #input-area{
+            padding:24px;
+            border-top:1px solid rgba(255,255,255,0.08);
+            background:rgba(15,23,42,0.7);
+            backdrop-filter:blur(20px);
+            display:flex;
+            gap:14px;
+        }
+
+        #question{
+            flex:1;
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.08);
+            color:white;
+            padding:18px;
+            border-radius:16px;
+            outline:none;
+            font-size:1rem;
+            transition:0.25s;
+        }
+
+        #question::placeholder{
+            color:#64748b;
+        }
+
+        #question:focus{
+            border-color:#8b5cf6;
+            background:rgba(255,255,255,0.08);
+        }
+
+        button{
+            border:none;
+            background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+            color:white;
+            padding:16px 24px;
+            border-radius:16px;
+            cursor:pointer;
+            font-size:0.95rem;
+            font-weight:600;
+            transition:0.25s;
+        }
+
+        button:hover{
+            transform:translateY(-2px);
+            box-shadow:0 12px 25px rgba(124,58,237,0.35);
+        }
+
+        button:disabled{
+            opacity:0.6;
+            cursor:not-allowed;
+            transform:none;
+        }
+
+        /* ================= SCROLLBAR ================= */
+
+        ::-webkit-scrollbar{
+            width:8px;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background:#312e81;
+            border-radius:20px;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(10px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:900px){
+
+            .sidebar{
+                display:none;
+            }
+
+            .message{
+                max-width:90%;
+            }
+
+            .welcome h1{
+                font-size:2.2rem;
+            }
+
+            #input-area{
+                padding:18px;
+            }
+
+            #question{
+                padding:15px;
+            }
+
+            button{
+                padding:15px 18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <div class="sidebar">
+
+            <div class="sidebar-top">
+
+                <div>
+                    <div class="logo">
+                        <span>RAG</span> Agent
+                    </div>
+
+                    <p class="description">
+                        Upload PDFs and ask intelligent questions using your AI-powered retrieval augmented generation assistant.
+                    </p>
+                </div>
+
+                <div class="upload-card">
+
+                    <h3>Upload PDF</h3>
+
+                    <p>
+                        Upload your documents and start asking questions instantly.
+                    </p>
+
+                    <input 
+                        type="file" 
+                        id="pdf-upload" 
+                        accept=".pdf"
+                    />
+
+                    <button onclick="uploadPDF()">
+                        Upload Document
+                    </button>
+
+                    <span id="upload-status"></span>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-footer">
+                Powered by FastAPI + LangChain + LLM
+            </div>
+
+        </div>
+
+        <!-- ================= MAIN ================= -->
+
+        <div class="main">
+
+            <!-- TOPBAR -->
+
+            <div class="topbar">
+
+                <h2>AI Document Assistant</h2>
+
+                <span>Ready to answer your questions</span>
+
+            </div>
+
+            <!-- CHAT -->
+
+            <div id="chat-box">
+
+                <div class="welcome" id="welcome">
+
+                    <h1>🤖 RAG Assistant</h1>
+
+                    <p>
+                        Upload your PDF and ask anything from your documents.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- INPUT -->
+
+            <div id="input-area">
+
+                <input
+                    type="text"
+                    id="question"
+                    placeholder="Ask anything from your uploaded PDF..."
+                    onkeypress="if(event.key==='Enter') ask()"
+                />
+
+                <button onclick="ask()" id="btn">
+                    Send
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let chatHistory = [];
+
+        function removeWelcome() {
+            const welcome = document.getElementById("welcome");
+
+            if (welcome) {
+                welcome.remove();
+            }
+        }
+
+        function addMessage(text, role) {
+
+            removeWelcome();
+
+            chatHistory.push({ text, role });
+
+            const box = document.getElementById("chat-box");
+
+            const div = document.createElement("div");
+
+            div.className = `message ${role}`;
+
+            div.innerText = text;
+
+            box.appendChild(div);
+
+            box.scrollTop = box.scrollHeight;
+        }
+
+        async function uploadPDF() {
+
+            const file = document.getElementById("pdf-upload").files[0];
+
+            if (!file) {
+                document.getElementById("upload-status").innerText =
+                    "Please select a PDF file first.";
+                return;
+            }
+
+            const formData = new FormData();
+
+            formData.append("file", file);
+
+            document.getElementById("upload-status").innerText =
+                "Uploading PDF...";
+
+            try {
+
+                const response = await fetch(
+                    "http://127.0.0.1:8000/upload",
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+                const data = await response.json();
+
+                document.getElementById("upload-status").innerText =
+                    data.message || "Upload completed.";
+
+            } catch (error) {
+
+                document.getElementById("upload-status").innerText =
+                    "Failed to upload PDF.";
+
+            }
+        }
+
+        async function ask() {
+
+            const input = document.getElementById("question");
+
+            const btn = document.getElementById("btn");
+
+            const question = input.value.trim();
+
+            if (!question) return;
+
+            addMessage(question, "user");
+
+            input.value = "";
+
+            btn.disabled = true;
+
+            const typing = document.createElement("div");
+
+            typing.className = "message bot typing";
+
+            typing.id = "typing";
+
+            typing.innerText = "Thinking...";
+
+            document.getElementById("chat-box").appendChild(typing);
+
+            document.getElementById("chat-box").scrollTop =
+                document.getElementById("chat-box").scrollHeight;
+
+            try {
+
+                const response = await fetch(
+                    "http://127.0.0.1:8000/ask",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            question: question
+                        }),
+
+                        signal: AbortSignal.timeout(120000)
+                    }
+                );
+
+                const data = await response.json();
+
+                const typingElement = document.getElementById("typing");
+
+                if (typingElement) {
+                    typingElement.remove();
+                }
+
+                if (data.answer) {
+
+                    addMessage(data.answer, "bot");
+
+                } else {
+
+                    addMessage("Task completed!", "bot");
+
+                }
+
+            } catch (error) {
+
+                const typingElement = document.getElementById("typing");
+
+                if (typingElement) {
+                    typingElement.remove();
+                }
+
+                if (error.name === "TimeoutError") {
+
+                    addMessage(
+                        "Request timed out. The model may still be processing your request.",
+                        "bot"
+                    );
+
+                } else {
+
+                    addMessage(
+                        "Error connecting to server.",
+                        "bot"
+                    );
+
+                }
+
+            }
+
+            btn.disabled = false;
+
+            input.focus();
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+2026/05/19-15:32:45.199 4920 Reusing MANIFEST C:\Users\Kanhaiya\OneDrive\Desktop\projects\Rag_Agents\firefox_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/05/19-15:32:45.200 4920 Recovering log #15
+2026/05/19-15:32:45.256 4920 Reusing old log C:\Users\Kanhaiya\OneDrive\Desktop\projects\Rag_Agents\firefox_profile\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000015.log 
+2026/05/19-15:32:50.219 50a8 Level-0 table #20: started
+2026/05/19-15:32:50.256 50a8 Level-0 table #20: 1134582 bytes OK
+2026/05/19-15:32:50.259 50a8 Delete type=0 #15
+2026/05/19-15:32:52.210 4920 Compacting 1@1 + 1@2 files
+2026/05/19-15:32:52.291 4920 Generated table #21@1: 50037 keys, 2213007 bytes
+2026/05/19-15:32:52.295 4920 Generated table #22@1: 1523 keys, 76670 bytes
+2026/05/19-15:32:52.296 4920 Compacted 1@1 + 1@2 files => 2289677 bytes
+2026/05/19-15:32:52.296 4920 compacted to: files[ 0 0 2 0 0 0 0 ]
+2026/05/19-15:32:52.297 4920 Delete type=2 #17
+2026/05/19-15:32:52.297 4920 Delete type=2 #20

@@ -1,0 +1,229 @@
+===========================================================
+FLIPKART ORDER CANCELLATION, RETURN, REFUND & PAYMENT POLICY
+Model‑Ready Structured Text – Version 1.0
+===========================================================
+
+TABLE OF CONTENTS
+1.  Scope & Definitions
+2.  Cancellation Policy
+    2.1 Standard Orders
+    2.2 Hyperlocal (MINUTES) Orders
+    2.3 Cancellation by Seller/Flipkart
+3.  Return Policy
+    3.1 General Rules for All Returns
+    3.2 Part 1 – Category‑wise Return Window & Actions
+    3.3 Part 2 – Returns Pick‑Up & Validation
+    3.4 Part 3 – Successful Return & Exceptions
+    3.5 Hyperlocal Return Policy
+    3.6 Non‑Returnable Items
+4.  Replacement & Repair Policy (Service Centre)
+5.  Refund Policy
+6.  Payment Methods
+7.  Shipping & Delivery Policy
+8.  Warranty & Guarantee
+9.  Customer Support
+10. Modification & Disclaimers
+===========================================================
+
+1. SCOPE & DEFINITIONS
+This policy applies to all purchases made on the Flipkart platform.
+- “Customer/Buyer”: Person placing the order.
+- “Seller”: Third‑party merchant listing the product.
+- “Order”: A confirmed purchase request.
+- “Dispatch”: Handing over the product to the courier partner.
+- “Return Window”: Period from date of delivery within which a return/replacement can be requested.
+
+2. CANCELLATION POLICY
+2.1 Standard Orders
+- An order can be cancelled anytime BEFORE it is dispatched.
+- AFTER dispatch / during delivery: Cancellation not allowed; the customer may refuse delivery at the doorstep.
+- Category‑specific time windows may apply (see product page). Once the window expires, cancellation may not be free.
+- If a cancellation fee applies, the amount will be shown on the order confirmation page.
+- Flipkart reserves the right to accept or reject any cancellation, and to modify the time window or fee.
+
+2.2 Hyperlocal (MINUTES Delivery) Orders
+- Self‑serve cancellation is NOT available for MINUTES orders due to rapid dispatch.
+- Cancellation/refund can only be requested via Customer Support (CX Agent) under these circumstances:
+    a) Order not delivered within the estimated time shown at order placement.
+    b) Order not yet picked up by the delivery partner.
+    c) Seller has not accepted or has cancelled the order for reasons not attributable to the buyer.
+    d) Any other reason that Flipkart may update from time to time.
+
+2.3 Cancellation by Seller / Flipkart
+- Sellers or Flipkart may cancel an order (in whole or part) due to:
+    • Product unavailability
+    • Force majeure (unforeseeable events)
+    • Suspected fraudulent activity
+    • Violation of Terms of Use
+    • Logistical constraints
+- If cancelled by the platform/seller, the buyer is NOT charged.
+- For prepaid orders, a full refund is initiated. For cancellations by seller, a full refund is guaranteed.
+- Refund tracking is available on the Order Details page.
+
+3. RETURN POLICY
+General Note: The return policy on the individual product page overrides the general policy. All products in a category may not have the same return options.
+
+3.1 General Rules for All Returns
+- Returns must be requested within the return window.
+- Products must be unused, undamaged, with all original accessories, manuals, warranty cards, and packaging.
+- For mobile/laptop/tablet: disable screen lock, remove iCloud lock, and format the device before return.
+- Open Box Delivery: If a product is different/damaged at the time of open box acceptance, a refund (including on‑spot for COD) will be given. After acceptance, no return for non‑defective reasons.
+
+3.2 Part 1 – Category‑wise Return Window, Actions & Conditions
+(Reference table simplified. “/” means “or”.)
+
+A. FURNITURE (Home: Pet Supplies & Rest of Home, except Home décor, Furnishing, Home Improvement Tools, Household Items)
+   Window: 10 days
+   Action: Refund / Replacement
+   Condition: Installation by brand‑authorized personnel required for eligibility. Troubleshooting (online/phone/visit) will be attempted. Defect confirmed → refund/replacement (same product), only one replacement. If no defect confirmed within 10 days of delivery/installation, refer to brand service centre.
+
+B. LIFESTYLE (Watches, T‑Shirts, Footwear, Saree, Shorts, Dresses, Kids’ clothing, Men’s/Women’s ethnic & western wear, Bags, Sunglasses, Belts, Frames, Backpacks, Suitcases, Luggage, Jewellery, Footwear Accessories, Travel Accessories, Watch Accessories, Winter Wear)
+   Window: 10 days
+   Action: Refund, Replacement or Exchange
+
+C. MEDICINE (Allopathy & Homeopathy)
+   Window: 2 days
+   Action: Refund
+
+D. HOME (Improvement Tools, Household Items, Home décor, Furnishing)
+   Window: 7 days
+   Action: Refund or Replacement
+
+E. BOOKS (All books), SPORTS EQUIPMENT (Racquet, ball, supports, gloves, bags), EXERCISE & FITNESS EQUIPMENT (Home gym combos, dumbbells), AUTO ACCESSORIES (Car/Bike helmets, kits, media players)
+   Window: 7 days
+   Action: Replacement only
+   Condition: Free replacement if defective/damaged or wrong item. Product must be intact with original accessories, manuals, warranty cards, original packaging.
+
+F. TOYS (Remote controlled, Learning, Stuffed), STATIONERY (Pens, Diaries, Notebooks, Calculators), MUSICAL INSTRUMENTS (except Wind Instruments – see Non‑Returnable)
+   Window: 7 days
+   Action: Replacement only (same conditions as E). Wind instruments are non‑returnable for hygiene; if delivered damaged/defective/wrong, free replacement provided.
+
+G. MOBILES – Apple, Google, Motorola, Infinix, Redmi, MI, Vivo, POCO, Realme, Samsung phones
+   Window: 7 days
+   Action: Replacement only (Service Centre)
+   Condition: Brand assistance for device issues. Customer must contact nearest brand authorized service centre. Flipkart facilitates replacement only for DOA (Dead on Arrival) approved by brand. For Samsung, share DOA certificate with Flipkart support.
+
+H. ELECTRONICS – Apple/Beats, Google, Realme, Samsung, JBL, Infinity, Epson, HP, Dell, Canon, MI, Dizo (Tablets, Laptops, Smart Watches) – and a list of other major brands
+   Window: 7 days
+   Action: Service Centre Replacement/Repair only
+   Condition: Subject to brand warranty guidelines. Customer reaches out to brand service centre. Final decision on defective device rests with seller/brand.
+
+I. ALL OTHER MOBILES (except those in G), ALL OTHER ELECTRONICS (except those in H), ALL SMALL HOME APPLIANCES (except Chimney, Water Purifier, Fan, Geyser), FURNITURE – Hammock Swing & Stool
+   Window: 7 days
+   Action: Replacement only
+   Condition: Troubleshooting via online/phone/visit. If defect confirmed, same model replacement (once). If no defect within 7 days, refer to brand service centre.
+
+J. FURNITURE, LARGE APPLIANCES (Except a list of major brands like LG, Godrej, Haier, IFB, etc.) and REST OF SMALL HOME APPLIANCES (Chimney, Water Purifier, Fan, Geyser only)
+   Window: 10 days
+   Action: Replacement only
+   Condition: Installation by brand‑authorized personnel required. Troubleshooting provided. Defect confirmed → replacement (same model, only one). If no defect within 10 days of delivery/installation, refer to brand service centre.
+
+K. GROCERY (Excluding MINUTES):
+   - Dairy, Bakery, Fruits & Vegetables: 2 days, Refund only.
+   - Other grocery (pulses, atta, edible, etc.): 7 days, Refund only.
+
+L. NO QUESTIONS ASKED RETURN (Select products)
+   Window: 10 days
+   Action: Refund or Replacement
+   Condition: Easy return request; product validation at pick‑up; fraud prevention checks.
+
+M. REFURBISHED
+   Window: 7 days
+   Action: Replacement only
+   Condition: Troubleshooting provided. If defect confirmed, replacement (same model). If no defect, directed to warranty partner.
+
+3.3 Part 2 – Returns Pick‑Up & Validation
+- Pick‑up address can be changed only if service is available at the new address.
+- During pick‑up, the product is checked for:
+    • Correct Product: IMEI/name/image/brand/serial/barcode/MRP tag intact.
+    • Complete Product: All in‑box accessories, freebies, combos present.
+    • Unused Product: No stains, unwashed, seal/return tags intact. For electronics, device formatted and screen/iCloud lock disabled.
+    • Undamaged Product: No scratches, dents, tears, holes on body/ports/SIM tray/back panel.
+    • Undamaged Packaging: Original box undamaged.
+- If any condition fails, the return pickup will be refused.
+
+3.4 Part 3 – Successful Return & Exceptions
+- If seller cannot replace, a refund will be given.
+- Missing/damaged accessory → replacement of accessory or e‑GV of equivalent amount at seller’s discretion.
+- Open box delivery: If wrong/damaged product received, refund given on‑spot (COD). After acceptance, only manufacturing defect claims allowed, subject to category policies.
+- For Flipkart‑installed products: do not open box yourself; authorised personnel will unbox & install.
+- Furniture: faulty parts replaced first; full replacement only if part replacement cannot resolve issue (as assessed by service personnel).
+- Flipkart may limit number of returns per order unit after evaluation.
+- Exceptions covered by separate validation: a) product undelivered, b) product/accessories missing, c) wrong product/accessories delivered.
+
+3.5 Hyperlocal Return Policy (MINUTES)
+Category-wise returns for hyperlocal orders:
+
+- Fresh Fruits, Vegetables, Milk: 1 day return, Refund.
+- Non‑prescription medicines (Paracetamol, Digene, Limcee, etc.): 1 day return, Refund.
+- Fresh Egg, Fish/Seafood, Meat: 2 days return, Refund.
+- Fresh Bread, Cheese, Butter; Grocery Food & Nutrition; Personal Care; Other (Detergent, Washing Liquid): 3 days return, Refund.
+- Books, Sports Equipment, Toys, Stationery, Home Utensils: 7 days return. Product must be intact with original accessories, manuals, warranty cards, packaging.
+- All Mobiles (except specific brands – see G), Electronics (except list in H), All Small Home Appliances (except Chimney, Water Purifier, Fan, Geyser): 7 days return, Refund only. Troubleshooting provided; if no defect, refer to brand service centre.
+- Specific Mobiles (Apple, Google, Motorola, Infinix, Redmi, MI, Vivo, POCO, Realme, Samsung) and major Electronics/Large appliances (same brand list as H): 7 days Service Centre Replacement/Repair only.
+- Home (Bedsheet, Pet Food, Furnishings, Home decor, etc.): 7 days return, Refund. Installation by brand personnel required where applicable.
+- Lifestyle (Watch, T‑Shirt, Footwear, Sari, Short, Dress, Jewellery, Footwear Accessories, Winter Wear): 10 days return, Refund.
+- Prescription medicines: 3 days return, Refund (accepted for damaged, wrong, expired products).
+
+3.6 Non‑Returnable Items
+- Intimate hygiene products: Diapers, bottle nipples, female urination devices, women intimate care, teethers, soothers, nipple pullers, sanitary pads/panty liners, condoms, toothbrushes, tampons, dental floss sticks, toilet brushes, cleaning gloves, boxers, trunks, socks, panties.
+- Wind instruments (harmonicas, flutes) – non‑returnable for hygiene; only defective/damaged/wrong delivery handled via replacement.
+- Any product marked “Non‑returnable” on product page.
+- For hyperlocal, returns for damaged/wrong delivery of non‑returnable products may be accepted on a case basis within 5 days of delivery.
+
+4. REPLACEMENT & REPAIR POLICY (SERVICE CENTRE)
+For certain brands (Mobiles, Electronics, Large Appliances listed in sections G, H, I, J), warranty and defect resolution is provided by brand‑authorized service centres.
+- Customers must contact the brand service centre directly.
+- For Samsung, Dead‑On‑Arrival (DOA) certificate from brand must be shared with Flipkart support.
+- Flipkart acts as a marketplace; final decision on replacement/repair rests with the seller/brand.
+- You can locate authorized service partners via Flipkart’s help section.
+
+5. REFUND POLICY
+- Refund is initiated once the returned product is received and inspected by the seller.
+- Refund timelines:
+    • Prepaid orders (Credit/Debit Card, Net Banking, UPI, Wallet): 5‑7 business days after return pickup/approval.
+    • Cash on Delivery (COD): refund to bank account (via NEFT) or as Flipkart Gift Card (eGV), within 5‑7 business days. For open box delivery instant refunds, cash may be handed over or transferred depending on the mode.
+- Refund status can be tracked on the Order Details page.
+- For cancelled orders (by seller/Flipkart), refund is processed within 5‑7 business days.
+- In cases of missing accessory, an e‑Gift Voucher (eGV) equivalent to the accessory price may be issued.
+
+6. PAYMENT METHODS
+Flipkart accepts the following payment methods:
+- Credit Cards (Visa, Mastercard, American Express, RuPay)
+- Debit Cards (all major banks)
+- Net Banking (50+ banks supported)
+- UPI (PhonePe, Google Pay, Paytm, BHIM, and other UPI apps)
+- Wallets (PhonePe wallet, Paytm, Freecharge, etc.)
+- Flipkart Pay Later (buy now, pay later with partner NBFCs)
+- Cash on Delivery (COD) – available for selected pin codes and order amounts
+- Flipkart Gift Card (eGV) – can be redeemed partially/fully
+- EMI options (Credit Card EMI, Debit Card EMI, Bajaj Finserv No‑Cost EMI, etc.)
+
+Payment Security: All transactions are secured via PCI‑DSS compliant payment gateways. Sensitive card data is not stored on Flipkart servers.
+
+7. SHIPPING & DELIVERY POLICY
+- Delivery times vary by location and product. Estimated delivery date is shown on the product and order confirmation pages.
+- Standard delivery: 2‑7 business days for most items. Large appliances/furniture may require 7‑14 days.
+- Express/MINUTES delivery: within 30‑90 minutes (select pin codes).
+- Shipping charges, if any, are displayed at checkout. Many products qualify for free delivery.
+- Delivery attempts: Normally 3 attempts. After failed attempts, the order may be returned to seller and refund initiated.
+- For large items, in‑home delivery and installation may be included.
+
+8. WARRANTY & GUARANTEE
+- Products carry manufacturer/brand warranty (duration mentioned on product page).
+- Warranty claims are handled by brand‑authorized service centres.
+- Flipkart does not provide a separate warranty unless specified (e.g., extended warranty plans sold separately).
+- Refurbished products come with seller/warranty partner warranty; contact details are provided in the packaging.
+
+9. CUSTOMER SUPPORT
+- 24×7 Customer Care: accessible via Flipkart app, website, or helpline numbers.
+- For return/cancellation requests, go to My Orders → select order → request return/cancel.
+- For hyperlocal order issues, contact CX Agent directly.
+- For brand service centre locator, use the Help Centre on the app.
+
+10. MODIFICATION & DISCLAIMERS
+- Flipkart reserves the right to modify this policy at any time. Updates will be communicated through the platform, push notifications, or other communication channels.
+- In case of discrepancy, the policy on the product/order page prevails.
+- For force majeure, unforeseen circumstances, or fraudulent activities, Flipkart may take decisions on a case‑by‑case basis.
+- This document is a consolidated representation and may contain simplified language for easier understanding; legal enforcement will be based on the full Terms of Use.
+
