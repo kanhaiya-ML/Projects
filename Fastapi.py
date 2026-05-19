@@ -56,6 +56,10 @@ def ask(request:Request):
     else:
         result = agent_executor.invoke({"input": request.question})
         return {"answer": result["output"]}
+    
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=10000)
 
 
 
