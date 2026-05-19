@@ -1,0 +1,9 @@
+.env
+chroma_db/
+pdf_chroma_db/
+chrome_profile/
+firefox_profile/
+temp.pdf
+__pycache__/
+*.pyc
+.DS_Store
