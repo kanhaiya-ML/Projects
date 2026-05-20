@@ -5,7 +5,7 @@ from langchain_community.retrievers import BM25Retriever
 from langchain_classic.retrievers import EnsembleRetriever
 
 
-File_Path = r"C:\Users\Kanhaiya\OneDrive\Desktop\projects\Rag_Agents\data.txt"
+File_Path = "data.txt"
 
 with open(File_Path,"r",encoding="utf-8") as f:
     texts = f.read()
