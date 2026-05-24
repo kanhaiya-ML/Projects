@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Step 5 — run the app
-CMD ["uvicorn", "Fastapi:app", "--host", "0.0.0.0", "--port", "10000"]
+CMD ["sh", "-c", "uvicorn Fastapi:app --host 0.0.0.0 --port ${PORT:-10000}"]
