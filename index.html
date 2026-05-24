@@ -151,7 +151,7 @@
             
             document.getElementById("upload-status").innerText = "Uploading...";
             
-            const response = await fetch("https://rag-agent-production-aee3.up.railway.app/upload", {
+            const response = await fetch("http://localhost:8000/upload", {
                 method: "POST",
                 body: formData
             });
@@ -178,9 +178,9 @@
             document.getElementById("chat-box").appendChild(typing);
 
             try {
-                const response = await fetch("https://rag-agent-production-aee3.up.railway.app/ask", {
+                const response = await fetch("http://localhost:8000/ask", {
                     method: "POST",
-                    // headers: { "Content-Type": "application/json" },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ question: question }),
                     signal: AbortSignal.timeout(120000)
                 });
