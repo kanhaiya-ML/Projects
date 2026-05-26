@@ -146,4 +146,4 @@ Response → Frontend
 Built by **Kanhaiya**.
 
 - GitHub: [@kanhaiya-ML](https://github.com/kanhaiya-ML)
-- No college degree. Just consistency. 💪
+ 💪
