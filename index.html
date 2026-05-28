@@ -134,7 +134,7 @@
                 const formData = new FormData();
                 formData.append("file", file);
                 document.getElementById("upload-status").innerText = "Uploading PDF...";
-                const response = await fetch("rag-agent-production-aee3.up.railway.app/upload", {
+                const response = await fetch("Your_API_URL/upload", {
                     method: "POST",
                     body: formData
                 });
@@ -150,7 +150,7 @@
                 formData.append("file", file);
                 formData.append("question", question);
                 document.getElementById("upload-status").innerText = "Analyzing image...";
-                const response = await fetch("rag-agent-production-aee3.up.railway.app/ask-image", {
+                const response = await fetch("Your_API_URL/ask-image", {
                     method: "POST",
                     body: formData
                 });
@@ -178,7 +178,7 @@
             document.getElementById("chat-box").appendChild(typing);
 
             try {
-                const response = await fetch("rag-agent-production-aee3.up.railway.app/ask", {
+                const response = await fetch("Your_API_URL/ask", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ question: question })
