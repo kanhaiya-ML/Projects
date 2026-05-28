@@ -54,19 +54,6 @@
             margin-right: auto;
         }
 
-        #upload-area {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 15px;
-            width: 700px;
-        }
-
-        #upload-status {
-            color: #7c3aed;
-            font-size: 0.9rem;
-        }
-
         #input-area {
             display: flex;
             gap: 10px;
@@ -114,8 +101,8 @@
     <div id="chat-box"></div>
 
     <div id="upload-area">
-        <input type="file" id="pdf-upload" accept=".pdf" />
-        <button onclick="uploadPDF()">Upload PDF</button>
+        <input type="file" id="pdf-upload" accept=".pdf,.jpg" />
+        <button onclick="uploadFile()">Upload</button>
         <span id="upload-status"></span>
     </div>
 
@@ -123,17 +110,14 @@
         <input 
             type="text" 
             id="question" 
-            placeholder="Ask something..."
+            placeholder="Ask something about company policies..."
             onkeypress="if(event.key==='Enter') ask()"
         />
         <button onclick="ask()" id="btn">Ask</button>
     </div>
 
     <script>
-        let chatHistory = [];
-
         function addMessage(text, role) {
-            chatHistory.push({text, role});
             const box = document.getElementById("chat-box");
             const div = document.createElement("div");
             div.className = `message ${role}`;
@@ -142,22 +126,38 @@
             box.scrollTop = box.scrollHeight;
         }
 
-        async function uploadPDF() {
+        async function uploadFile() {
             const file = document.getElementById("pdf-upload").files[0];
             if (!file) return;
-            
-            const formData = new FormData();
-            formData.append("file", file);
-            
-            document.getElementById("upload-status").innerText = "Uploading...";
-            
-            const response = await fetch("http://localhost:8000/upload", {
-                method: "POST",
-                body: formData
-            });
-            
-            const data = await response.json();
-            document.getElementById("upload-status").innerText = data.message;
+
+            if (file.name.endsWith('.pdf')) {
+                const formData = new FormData();
+                formData.append("file", file);
+                document.getElementById("upload-status").innerText = "Uploading PDF...";
+                const response = await fetch("http://127.0.0.1:8000/upload", {
+                    method: "POST",
+                    body: formData
+                });
+                const data = await response.json();
+                document.getElementById("upload-status").innerText = data.message;
+            } else {
+                const question = document.getElementById("question").value.trim();
+                if (!question) {
+                    alert("Please type a question about the image first.");
+                    return;
+                }
+                const formData = new FormData();
+                formData.append("file", file);
+                formData.append("question", question);
+                document.getElementById("upload-status").innerText = "Analyzing image...";
+                const response = await fetch("http://127.0.0.1:8000/ask-image", {
+                    method: "POST",
+                    body: formData
+                });
+                const data = await response.json();
+                document.getElementById("upload-status").innerText = "Done";
+                addMessage(data, "bot");
+            }
         }
 
         async function ask() {
@@ -178,34 +178,19 @@
             document.getElementById("chat-box").appendChild(typing);
 
             try {
-                const response = await fetch("http://localhost:8000/ask", {
+                const response = await fetch("http://127.0.0.1:8000/ask", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ question: question }),
-                    signal: AbortSignal.timeout(120000)
+                    body: JSON.stringify({ question: question })
                 });
 
                 const data = await response.json();
-
-                if (document.getElementById("typing")) {
-                    document.getElementById("typing").remove();
-                }
-
-                if (data.answer) {
-                    addMessage(data.answer, "bot");
-                } else {
-                    addMessage("Task completed!", "bot");
-                }
+                document.getElementById("typing").remove();
+                addMessage(data.answer, "bot");
 
             } catch (error) {
-                if (document.getElementById("typing")) {
-                    document.getElementById("typing").remove();
-                }
-                if (error.name === "TimeoutError") {
-                    addMessage("Request timed out. Task may still be running.", "bot");
-                } else {
-                    addMessage("Error connecting to server.", "bot");
-                }
+                document.getElementById("typing").remove();
+                addMessage("Error connecting to server.", "bot");
             }
 
             btn.disabled = false;

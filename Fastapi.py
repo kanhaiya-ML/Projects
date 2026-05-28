@@ -10,6 +10,10 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 import state
 from agents import agent_executor
+from groq import Groq
+import base64
+
+
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -60,6 +64,36 @@ def ask(request:Request):
     else:
         result = agent_executor.invoke({"input": request.question})
         return {"answer": result["output"]}
+    
+client = Groq(
+    api_key=os.getenv("GROQ_API_KEY")
+)
+
+@app.post("/ask-image")
+async def ask_image(file:UploadFile = File(...),question:str = ""):
+        # with open(image_path,"rb") as image_file:
+        image_data = await file.read()
+        base64_image = base64.b64encode(image_data).decode("utf-8")
+        
+        # image_path = "C:\Users\Kanhaiya\OneDrive\Desktop\RAG\Langchain\Rag_Agents\marvels-spider-man-5120x2880-13495.jpg"
+        # base64_image = ask_image(image_path)
+
+        message = [{
+            "role":"user",
+            "content":[
+                {"type":"text","text":question},
+                {"type":"image_url","image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}}
+            ]
+        }]
+
+        prompt = "Analyze image and text and return a suitable answer as per query"
+        response = client.chat.completions.create(
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
+            # prompt=prompt,
+            messages=message
+        )
+        final_answer = response.choices[0].message.content
+        return f"This is Your Final Overview: {final_answer}"
     
 if __name__ == "__main__":
 
